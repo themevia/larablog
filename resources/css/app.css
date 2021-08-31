@@ -1,0 +1,172 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.sect {
+    @apply rounded-lg bg-gray-50 dark:bg-transparent border border-gray-200/50 dark:border-via-500/50;
+}
+
+/* Nav menu */
+.nav-menu {
+    @apply overflow-hidden flex flex-col text-sm;
+}
+
+.nav-item {
+    @apply relative text-via-800/75 dark:text-white/75 hover:text-via-800 dark:hover:text-white py-2 px-6;
+}
+.nav-item.active {
+    @apply !text-via-800;
+}
+.dark .nav-item.active {
+    @apply !text-white;
+}
+.nav-item.active::before {
+    @apply absolute top-0 rounded-xl block bg-via-800 dark:bg-white;
+    content: '';
+    width: 10px;
+    height: 100%;
+    left: -7px;
+}
+.nav-item svg {
+    @apply w-6 h-6 fill-current inline-block;
+}
+.nav-item span {
+    @apply pl-3 absolute;
+}
+
+/* Larablog */
+.lara-container {
+    @apply max-w-7xl mx-auto px-4 lg:px-8;
+}
+.lara-h {
+    @apply w-fit;
+}
+.lara-h::after {
+    @apply block bg-via-800 h-0.5;
+    content: '';
+    width: 30%;
+}
+
+/* Toggle darkmode switch */
+input.toggle-darkMode ~ .dot {
+    margin-top: 5px;
+}
+input.toggle-darkMode:checked ~ .dot {
+    @apply bg-green-500;
+    transform: translateX(100%);
+}
+
+/* Tinymce custom styles */
+.tox-tinymce, .tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary {
+    @apply !bg-none !border-gray-200;
+}
+.tox-editor-header {
+    border-bottom: 1px solid #e5e7eb !important;
+}
+.tox-tinymce {
+    @apply !border !rounded-lg;
+}
+.tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type) {
+    @apply !border-r !border-gray-200;
+}
+.tox .tox-statusbar {
+    @apply !p-3.5 !border-t !border-gray-200;
+}
+
+.dark .tox .tox-toolbar,.dark .tox .tox-toolbar__overflow,.dark .tox .tox-toolbar__primary {
+    @apply bg-via-900;
+}
+.dark .tox-tinymce {
+    @apply border-via-500;
+}
+.dark .tox .tox-tbtn:hover {
+    @apply text-white bg-white bg-opacity-5;
+}
+.dark .tox .tox-tbtn svg {
+    @apply text-white fill-current;
+}
+.dark .tox .tox-tbtn__select-chevron svg,.dark .tox .tox-tbtn:hover svg,.dark .tox .tox-tbtn:active svg {
+    @apply text-white/50 fill-current
+}
+
+/* Grapesjs custom styles */
+.gjs-pn-views-container {
+    @apply !left-0;
+    padding-top: 54px!important;
+}
+.gjs-one-bg {
+    @apply !bg-white;
+}
+.gjs-two-color, .gjs-clm-tags #gjs-clm-new {
+    @apply !text-gray-500;
+}
+.gjs-pn-views {
+    @apply !left-0 !border-b border-gray-200;
+}
+.gjs-cv-canvas, .gjs-pn-actionPanel {
+    @apply right-0;
+    left: inherit!important;
+}
+.gjs-cv-canvas {
+    @apply border-t border-gray-200;
+    top: 54px!important;
+}
+.gjs-pn-btn.gjs-pn-active {
+    @apply !shadow-none !bg-via-800 rounded-lg;
+}
+.gjs-four-color {
+    @apply !text-white;
+}
+.gjs-off-prv {
+    @apply w-full !bg-white text-right;
+}
+.gjs-off-prv::before {
+    @apply !text-gray-600 hover:text-green-500;
+    content: 'Back to editor';
+    font-family: 'Poppins',sans-serif;
+}
+.gjs-pn-panel {
+    @apply !shadow-none;
+}
+.gjs-com-badge, .gjs-com-badge-red, .gjs-badge, .gjs-toolbar {
+    @apply !bg-green-500;
+}
+.gjs-selected, .gjs-cv-canvas .gjs-highlighter, .gjs-cv-canvas .gjs-highlighter-sel {
+    outline-color: rgb(16, 185, 129)!important;
+}
+.gjs-pn-btn {
+    @apply flex items-center justify-center;
+}
+#gjs-laraAction {
+    @apply rounded-lg border border-gray-200 focus:ring focus:ring-green-500;
+    padding: 5px 20px;
+}
+.gjs-field,.gjs-category-title, .gjs-layer-title, .gjs-block-category .gjs-title, .gjs-sm-sector .gjs-sm-title, .gjs-clm-tags .gjs-sm-title {
+    @apply !bg-gray-100;
+}
+.gjs-three-bg {
+    @apply !bg-green-500;
+}
+.gjs-clm-tag {
+    @apply rounded-lg !shadow-none !text-white;
+}
+.gjs-pn-views {
+    padding: 12px 8px!important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+}
+::-webkit-scrollbar-track {
+    background: #c5c5c5;
+}
+.dark > ::-webkit-scrollbar-thumb {
+    background: #151515;
+}
+.dark > ::-webkit-scrollbar-track {
+    background: #212121;
+}
